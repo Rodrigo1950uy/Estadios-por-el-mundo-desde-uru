@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reportes de Estadios de la Premier League</title>
+    <title>Los estadios del mundo por uruguayos</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -11,91 +11,186 @@
         body {
             font-family: 'Inter', sans-serif;
         }
+        .placeholder-img {
+            background-color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4a5568;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
 
-<div class="container mx-auto p-4 md:p-8">
-    <div class="bg-white rounded-xl shadow-lg p-6 md:p-10">
-        <h1 class="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-6">Reportes de Estadios de la Premier League</h1>
-        <p class="text-center text-gray-600 mb-8">
-            Una mirada detallada a algunos de los estadios más emblemáticos del fútbol inglés.
+<div class="container mx-auto p-4 md:p-8 max-w-4xl">
+    <div class="bg-white rounded-xl shadow-lg p-6 md:p-10 mb-8">
+        <h1 class="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-2">Los estadios del mundo por uruguayos</h1>
+        <p class="text-center text-gray-600 mb-8 italic">
+            Redactado por Rodrigo Fernández, Lucas Labrador y Felipe Figueroa
         </p>
-        
-        <!-- Old Trafford - Manchester United -->
-        <div class="stadium-report border-t pt-8 mt-8 border-gray-200">
-            <h2 class="text-2xl md:text-3xl font-semibold text-blue-800 mb-4">
-                Old Trafford - Manchester United
-            </h2>
-            <div class="bg-blue-50 p-6 rounded-lg mb-4">
-                <p class="mb-2"><strong class="font-semibold text-blue-700">Descripción General:</strong> Conocido como "El Teatro de los Sueños", Old Trafford es uno de los estadios más icónicos y grandes del fútbol inglés. Ha sido el hogar del Manchester United desde 1910 y ha sido testigo de innumerables momentos históricos, tanto a nivel de club como internacional.</p>
-                <p class="mb-2"><strong class="font-semibold text-blue-700">Historia:</strong> El estadio fue diseñado por el arquitecto Archibald Leitch. Durante la Segunda Guerra Mundial, fue seriamente dañado por los bombardeos alemanes y tuvo que ser reconstruido. A lo largo de los años, ha experimentado varias expansiones y modernizaciones, culminando en su forma actual como un estadio de clase mundial.</p>
-                <p><strong class="font-semibold text-blue-700">Capacidad:</strong> 74,310 espectadores</p>
+
+        <!-- Estadio de Chelsea -->
+        <div id="stamford-bridge" class="stadium-report border-t pt-8 mt-8 border-gray-200">
+            <div class="flex flex-col md:flex-row gap-6 mb-6">
+                <img src="https://placehold.co/600x400/808080/FFFFFF?text=Stamford+Bridge" alt="Foto general de Stamford Bridge" class="w-full md:w-1/2 rounded-lg shadow-md h-64 object-cover">
+                <div class="md:w-1/2">
+                    <h2 class="text-2xl md:text-3xl font-semibold text-blue-800 mb-2">Stamford Bridge</h2>
+                    <ul class="space-y-1 text-gray-700">
+                        <li><strong class="font-semibold text-blue-600">Club:</strong> Chelsea FC</li>
+                        <li><strong class="font-semibold text-blue-600">Ubicación:</strong> Fulham, Londres, Inglaterra</li>
+                        <li><strong class="font-semibold text-blue-600">Capacidad:</strong> 40,341 espectadores</li>
+                    </ul>
+                </div>
             </div>
-            <h3 class="text-xl font-semibold text-blue-800 mb-2">Características Destacadas:</h3>
-            <ul class="list-disc pl-5 space-y-2 text-gray-700">
-                <li><strong class="font-semibold text-blue-600">Capacidad y Dimensiones:</strong> Es el estadio de fútbol de clubes más grande del Reino Unido.</li>
-                <li><strong class="font-semibold text-blue-600">Estatuas y Monumentos:</strong> En sus alrededores se encuentran estatuas de leyendas del club como Sir Matt Busby, Sir Alex Ferguson y la "United Trinity" (George Best, Denis Law y Bobby Charlton).</li>
-                <li><strong class="font-semibold text-blue-600">Museo y Tour:</strong> El estadio alberga un museo que narra la rica historia del club y ofrece tours guiados que permiten a los aficionados explorar áreas como el túnel de vestuarios y los banquillos.</li>
-            </ul>
-        </div>
-        
-        <!-- Anfield - Liverpool FC -->
-        <div class="stadium-report border-t pt-8 mt-8 border-gray-200">
-            <h2 class="text-2xl md:text-3xl font-semibold text-blue-800 mb-4">
-                Anfield - Liverpool FC
-            </h2>
-            <div class="bg-red-50 p-6 rounded-lg mb-4">
-                <p class="mb-2"><strong class="font-semibold text-red-700">Descripción General:</strong> Anfield es el hogar del Liverpool FC y uno de los estadios con más ambiente en el fútbol mundial. Su atmósfera, especialmente durante los partidos de Champions League, es legendaria y la afición, conocida como "The Kop", juega un papel crucial en ello.</p>
-                <p class="mb-2"><strong class="font-semibold text-red-700">Historia:</strong> Aunque es sinónimo del Liverpool FC, Anfield fue originalmente el hogar del Everton FC antes de que este se mudara a Goodison Park en 1892. El estadio ha sido objeto de varias renovaciones, la más reciente con la nueva tribuna principal (Main Stand) que aumentó significativamente su capacidad.</p>
-                <p><strong class="font-semibold text-red-700">Capacidad:</strong> 61,276 espectadores</p>
+            <p class="mb-4 text-gray-700"><strong class="font-semibold text-blue-700">Información General:</strong> Inaugurado en 1877, Stamford Bridge ha sido el hogar del Chelsea FC desde la fundación del club en 1905. Es uno de los estadios más antiguos de la Premier League y ha sido objeto de numerosas renovaciones, aunque su diseño actual mantiene la esencia de su rica historia. A pesar de su antigüedad, el estadio ofrece una experiencia moderna para los aficionados.</p>
+            <p class="mb-6 text-gray-700"><strong class="font-semibold text-blue-700">Arquitectura e Ingeniería:</strong> La estructura del estadio es el resultado de múltiples fases de desarrollo, lo que le da una forma de tazón no uniforme. La ingeniería moderna se ha centrado en maximizar la capacidad y la visibilidad dentro de los límites del sitio, que es relativamente estrecho. La renovación más notable incluye la remodelación de las tribunas Este, Oeste y Matthew Harding, que han introducido elementos de diseño contemporáneo manteniendo el carácter del estadio. La solución a la escasez de espacio fue la construcción de varias tribunas en voladizo.</p>
+            <div class="flex items-center gap-4 text-gray-500 mb-4">
+                <span id="views-stamford-bridge" class="flex items-center gap-1"></span>
+                <button id="like-stamford-bridge" class="flex items-center gap-1 text-red-600 hover:text-red-800 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    <span id="likes-count-stamford-bridge"></span>
+                </button>
+                <button id="share-stamford-bridge" class="flex items-center gap-1 text-blue-600 hover:text-blue-800 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08a2.52 2.52 0 0 0-1.76.7L9.91 12.5a2.58 2.58 0 0 0 0-1L16.24 7.2a2.52 2.52 0 1 0-.6-1.57A2.52 2.52 0 0 0 14.24 6l-6.33 3.65a2.55 2.55 0 1 0 0 4.7L14.24 18a2.52 2.52 0 1 0 3.76.08z"/></svg>
+                    <span>Compartir</span>
+                </button>
             </div>
-            <h3 class="text-xl font-semibold text-blue-800 mb-2">Características Destacadas:</h3>
-            <ul class="list-disc pl-5 space-y-2 text-gray-700">
-                <li><strong class="font-semibold text-red-600">The Kop:</strong> Esta es la tribuna más famosa del estadio, conocida por su apasionada afición y por ser la fuente del famoso cántico "You'll Never Walk Alone".</li>
-                <li><strong class="font-semibold text-red-600">Puertas de Shankly y Paisley:</strong> Las puertas de entrada al estadio están dedicadas a los legendarios mánagers Bill Shankly y Bob Paisley.</li>
-                <li><strong class="font-semibold text-red-600">Señal "This Is Anfield":</strong> Antes de salir al campo, los jugadores del Liverpool tocan un letrero con la inscripción "This Is Anfield" como un gesto de tradición y motivación.</li>
-            </ul>
-        </div>
-        
-        <!-- Emirates Stadium - Arsenal FC -->
-        <div class="stadium-report border-t pt-8 mt-8 border-gray-200">
-            <h2 class="text-2xl md:text-3xl font-semibold text-blue-800 mb-4">
-                Emirates Stadium - Arsenal FC
-            </h2>
-            <div class="bg-red-100 p-6 rounded-lg mb-4">
-                <p class="mb-2"><strong class="font-semibold text-red-800">Descripción General:</strong> El Emirates Stadium es un moderno y espectacular recinto, sede del Arsenal FC desde 2006. Reemplazó al histórico Highbury y ofrece una experiencia de día de partido de vanguardia para los aficionados.</p>
-                <p class="mb-2"><strong class="font-semibold text-red-800">Historia:</strong> El Arsenal se vio obligado a buscar un nuevo estadio debido a la limitada capacidad de Highbury. La construcción del Emirates Stadium fue un proyecto masivo que tardó varios años en completarse, pero se convirtió en un hito para el club al inicio del siglo XXI.</p>
-                <p><strong class="font-semibold text-red-800">Capacidad:</strong> 60,704 espectadores</p>
+            <div class="comments-section bg-gray-50 p-4 rounded-lg">
+                <h4 class="font-semibold text-gray-800 mb-2">Comentarios</h4>
+                <div id="comments-stamford-bridge" class="space-y-3 mb-4"></div>
+                <form id="comment-form-stamford-bridge" class="flex flex-col md:flex-row gap-2">
+                    <input type="text" placeholder="Escribe un comentario..." class="flex-1 p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
+                    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-blue-700 transition-colors text-sm">Enviar</button>
+                </form>
             </div>
-            <h3 class="text-xl font-semibold text-blue-800 mb-2">Características Destacadas:</h3>
-            <ul class="list-disc pl-5 space-y-2 text-gray-700">
-                <li><strong class="font-semibold text-red-600">Diseño Moderno:</strong> El estadio cuenta con una estructura de tazón moderna que proporciona excelentes vistas desde todos los asientos.</li>
-                <li><strong class="font-semibold text-red-600">Estatuas de Leyendas:</strong> Afuera del estadio, se pueden encontrar estatuas de leyendas del club como Thierry Henry, Tony Adams y Dennis Bergkamp, celebrando su legado.</li>
-                <li><strong class="font-semibold text-red-600">Aceso al Transporte:</strong> El estadio está muy bien comunicado con el transporte público de Londres, facilitando el acceso a los aficionados.</li>
-            </ul>
-        </div>
-        
-        <!-- Etihad Stadium - Manchester City -->
-        <div class="stadium-report border-t pt-8 mt-8 border-gray-200">
-            <h2 class="text-2xl md:text-3xl font-semibold text-blue-800 mb-4">
-                Etihad Stadium - Manchester City
-            </h2>
-            <div class="bg-blue-200 p-6 rounded-lg mb-4">
-                <p class="mb-2"><strong class="font-semibold text-blue-900">Descripción General:</strong> El Etihad Stadium, originalmente construido para los Juegos de la Commonwealth de 2002, se convirtió en el hogar del Manchester City en 2003. Ha sido el escenario del resurgimiento del club como una potencia del fútbol inglés.</p>
-                <p class="mb-2"><strong class="font-semibold text-blue-900">Historia:</strong> Después de los Juegos de la Commonwealth, el estadio fue reconfigurado en un estadio de fútbol. Desde que el Manchester City se mudó, ha sido el corazón de los éxitos del equipo, incluyendo varias victorias en la Premier League.</p>
-                <p><strong class="font-semibold text-blue-900">Capacidad:</strong> 53,400 espectadores</p>
-            </div>
-            <h3 class="text-xl font-semibold text-blue-800 mb-2">Características Destacadas:</h3>
-            <ul class="list-disc pl-5 space-y-2 text-gray-700">
-                <li><strong class="font-semibold text-blue-900">Tour y Museo:</strong> El estadio ofrece un tour interactivo y un museo que relata la historia del Manchester City, con un enfoque en la era moderna del club.</li>
-                <li><strong class="font-semibold text-blue-900">Ubicación:</strong> Forma parte de un complejo deportivo más grande conocido como el "Etihad Campus", que también incluye las instalaciones de entrenamiento del club.</li>
-            </ul>
         </div>
 
-    </div>
-</div>
+        <!-- Emirates Stadium - Arsenal -->
+        <div id="emirates-stadium" class="stadium-report border-t pt-8 mt-8 border-gray-200">
+            <div class="flex flex-col md:flex-row gap-6 mb-6">
+                <img src="https://placehold.co/600x400/808080/FFFFFF?text=Emirates+Stadium" alt="Foto general de Emirates Stadium" class="w-full md:w-1/2 rounded-lg shadow-md h-64 object-cover">
+                <div class="md:w-1/2">
+                    <h2 class="text-2xl md:text-3xl font-semibold text-blue-800 mb-2">Emirates Stadium</h2>
+                    <ul class="space-y-1 text-gray-700">
+                        <li><strong class="font-semibold text-blue-600">Club:</strong> Arsenal FC</li>
+                        <li><strong class="font-semibold text-blue-600">Ubicación:</strong> Holloway, Londres, Inglaterra</li>
+                        <li><strong class="font-semibold text-blue-600">Capacidad:</strong> 60,704 espectadores</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="mb-4 text-gray-700"><strong class="font-semibold text-blue-700">Información General:</strong> Inaugurado en 2006, el Emirates Stadium es el hogar moderno del Arsenal. Reemplazó al icónico Highbury y se construyó para ofrecer una experiencia de día de partido de vanguardia, con una capacidad mucho mayor. El estadio se ha convertido en un símbolo de la era moderna del club y del fútbol de la Premier League.</p>
+            <p class="mb-6 text-gray-700"><strong class="font-semibold text-blue-700">Arquitectura e Ingeniería:</strong> La arquitectura del Emirates es un diseño de "cuenco" moderno que prioriza la visibilidad desde cualquier asiento. La estructura fue un proyecto de ingeniería masivo que requirió la construcción sobre una línea ferroviaria. El techo es un elemento clave del diseño, que no solo protege a los espectadores, sino que también sirve para amplificar el sonido, mejorando la atmósfera del estadio. El diseño se integra con el entorno urbano a través de grandes áreas abiertas y estatuas de leyendas del club.</p>
+            <div class="flex items-center gap-4 text-gray-500 mb-4">
+                <span id="views-emirates-stadium" class="flex items-center gap-1"></span>
+                <button id="like-emirates-stadium" class="flex items-center gap-1 text-red-600 hover:text-red-800 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    <span id="likes-count-emirates-stadium"></span>
+                </button>
+                <button id="share-emirates-stadium" class="flex items-center gap-1 text-blue-600 hover:text-blue-800 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08a2.52 2.52 0 0 0-1.76.7L9.91 12.5a2.58 2.58 0 0 0 0-1L16.24 7.2a2.52 2.52 0 1 0-.6-1.57A2.52 2.52 0 0 0 14.24 6l-6.33 3.65a2.55 2.55 0 1 0 0 4.7L14.24 18a2.52 2.52 0 1 0 3.76.08z"/></svg>
+                    <span>Compartir</span>
+                </button>
+            </div>
+            <div class="comments-section bg-gray-50 p-4 rounded-lg">
+                <h4 class="font-semibold text-gray-800 mb-2">Comentarios</h4>
+                <div id="comments-emirates-stadium" class="space-y-3 mb-4"></div>
+                <form id="comment-form-emirates-stadium" class="flex flex-col md:flex-row gap-2">
+                    <input type="text" placeholder="Escribe un comentario..." class="flex-1 p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
+                    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-blue-700 transition-colors text-sm">Enviar</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Tottenham Hotspur Stadium -->
+        <div id="tottenham-hotspur-stadium" class="stadium-report border-t pt-8 mt-8 border-gray-200">
+            <div class="flex flex-col md:flex-row gap-6 mb-6">
+                <img src="https://placehold.co/600x400/808080/FFFFFF?text=Tottenham+Hotspur+Stadium" alt="Foto general de Tottenham Hotspur Stadium" class="w-full md:w-1/2 rounded-lg shadow-md h-64 object-cover">
+                <div class="md:w-1/2">
+                    <h2 class="text-2xl md:text-3xl font-semibold text-blue-800 mb-2">Tottenham Hotspur Stadium</h2>
+                    <ul class="space-y-1 text-gray-700">
+                        <li><strong class="font-semibold text-blue-600">Club:</strong> Tottenham Hotspur FC</li>
+                        <li><strong class="font-semibold text-blue-600">Ubicación:</strong> Tottenham, Londres, Inglaterra</li>
+                        <li><strong class="font-semibold text-blue-600">Capacidad:</strong> 62,850 espectadores</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="mb-4 text-gray-700"><strong class="font-semibold text-blue-700">Información General:</strong> Inaugurado en 2019, es uno de los estadios más modernos y tecnológicamente avanzados del mundo. Construido en el mismo sitio que el antiguo White Hart Lane, no solo sirve como estadio de fútbol, sino que también es un lugar multifuncional para eventos de la NFL y conciertos, gracias a su innovador diseño.</p>
+            <p class="mb-6 text-gray-700"><strong class="font-semibold text-blue-700">Arquitectura e Ingeniería:</strong> La ingeniería del estadio es excepcional. Presenta un campo de fútbol retráctil, revelando una superficie de césped artificial debajo para los partidos de la NFL. Esta solución técnica es una de las más complejas jamás implementadas en un estadio. El diseño del "cuenco" de la grada sur, con 17,500 asientos, crea un "Muro de Sonido" para una acústica inigualable. El estadio fue diseñado para ser energéticamente eficiente y utilizar tecnologías de construcción sostenibles.</p>
+            <div class="flex items-center gap-4 text-gray-500 mb-4">
+                <span id="views-tottenham-hotspur-stadium" class="flex items-center gap-1"></span>
+                <button id="like-tottenham-hotspur-stadium" class="flex items-center gap-1 text-red-600 hover:text-red-800 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    <span id="likes-count-tottenham-hotspur-stadium"></span>
+                </button>
+                <button id="share-tottenham-hotspur-stadium" class="flex items-center gap-1 text-blue-600 hover:text-blue-800 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08a2.52 2.52 0 0 0-1.76.7L9.91 12.5a2.58 2.58 0 0 0 0-1L16.24 7.2a2.52 2.52 0 1 0-.6-1.57A2.52 2.52 0 0 0 14.24 6l-6.33 3.65a2.55 2.55 0 1 0 0 4.7L14.24 18a2.52 2.52 0 1 0 3.76.08z"/></svg>
+                    <span>Compartir</span>
+                </button>
+            </div>
+            <div class="comments-section bg-gray-50 p-4 rounded-lg">
+                <h4 class="font-semibold text-gray-800 mb-2">Comentarios</h4>
+                <div id="comments-tottenham-hotspur-stadium" class="space-y-3 mb-4"></div>
+                <form id="comment-form-tottenham-hotspur-stadium" class="flex flex-col md:flex-row gap-2">
+                    <input type="text" placeholder="Escribe un comentario..." class="flex-1 p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
+                    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-blue-700 transition-colors text-sm">Enviar</button>
+                </form>
+            </div>
+        </div>
 
-</body>
-</html>
+        <!-- Wembley Stadium -->
+        <div id="wembley" class="stadium-report border-t pt-8 mt-8 border-gray-200">
+            <div class="flex flex-col md:flex-row gap-6 mb-6">
+                <img src="https://placehold.co/600x400/808080/FFFFFF?text=Wembley+Stadium" alt="Foto general de Wembley Stadium" class="w-full md:w-1/2 rounded-lg shadow-md h-64 object-cover">
+                <div class="md:w-1/2">
+                    <h2 class="text-2xl md:text-3xl font-semibold text-blue-800 mb-2">Wembley Stadium</h2>
+                    <ul class="space-y-1 text-gray-700">
+                        <li><strong class="font-semibold text-blue-600">Club:</strong> Estadio Nacional de Inglaterra</li>
+                        <li><strong class="font-semibold text-blue-600">Ubicación:</strong> Wembley, Londres, Inglaterra</li>
+                        <li><strong class="font-semibold text-blue-600">Capacidad:</strong> 90,000 espectadores</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="mb-4 text-gray-700"><strong class="font-semibold text-blue-700">Información General:</strong> El nuevo Wembley se inauguró en 2007 en el mismo sitio que el antiguo estadio. Es el estadio más grande del Reino Unido y el segundo más grande de Europa. Es el estadio nacional de la selección de fútbol de Inglaterra y la sede de las finales de la FA Cup y la Copa de la Liga, así como de numerosos conciertos y eventos deportivos.</p>
+            <p class="mb-6 text-gray-700"><strong class="font-semibold text-blue-700">Arquitectura e Ingeniería:</strong> El icónico arco de Wembley, que se eleva a 133 metros de altura, es su característica más reconocible. Más que un adorno estético, el arco es un elemento estructural clave que soporta el peso del techo, eliminando la necesidad de pilares internos y ofreciendo vistas sin obstrucciones. El techo retráctil parcial permite la entrada de luz solar al campo. La ingeniería acústica también fue una prioridad, con un diseño que maximiza el ruido del público para una atmósfera eléctrica.</p>
+            <div class="flex items-center gap-4 text-gray-500 mb-4">
+                <span id="views-wembley" class="flex items-center gap-1"></span>
+                <button id="like-wembley" class="flex items-center gap-1 text-red-600 hover:text-red-800 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    <span id="likes-count-wembley"></span>
+                </button>
+                <button id="share-wembley" class="flex items-center gap-1 text-blue-600 hover:text-blue-800 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08a2.52 2.52 0 0 0-1.76.7L9.91 12.5a2.58 2.58 0 0 0 0-1L16.24 7.2a2.52 2.52 0 1 0-.6-1.57A2.52 2.52 0 0 0 14.24 6l-6.33 3.65a2.55 2.55 0 1 0 0 4.7L14.24 18a2.52 2.52 0 1 0 3.76.08z"/></svg>
+                    <span>Compartir</span>
+                </button>
+            </div>
+            <div class="comments-section bg-gray-50 p-4 rounded-lg">
+                <h4 class="font-semibold text-gray-800 mb-2">Comentarios</h4>
+                <div id="comments-wembley" class="space-y-3 mb-4"></div>
+                <form id="comment-form-wembley" class="flex flex-col md:flex-row gap-2">
+                    <input type="text" placeholder="Escribe un comentario..." class="flex-1 p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
+                    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-blue-700 transition-colors text-sm">Enviar</button>
+                </form>
+            </div>
+        </div>
 
+        <!-- Principality Stadium -->
+        <div id="principality-stadium" class="stadium-report border-t pt-8 mt-8 border-gray-200">
+            <div class="flex flex-col md:flex-row gap-6 mb-6">
+                <img src="https://placehold.co/600x400/808080/FFFFFF?text=Principality+Stadium" alt="Foto general de Principality Stadium" class="w-full md:w-1/2 rounded-lg shadow-md h-64 object-cover">
+                <div class="md:w-1/2">
+                    <h2 class="text-2xl md:text-3xl font-semibold text-blue-800 mb-2">Principality Stadium</h2>
+                    <ul class="space-y-1 text-gray-700">
+                        <li><strong class="font-semibold text-blue-600">Club:</strong> Estadio Nacional de Gales</li>
+                        <li><strong class="font-semibold text-blue-600">Ubicación:</strong> Cardiff, Gales</li>
+                        <li><strong class="font-semibold text-blue-600">Capacidad:</strong> 73,931 espectadores</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="mb-4 text-gray-700"><strong class="font-semibold text-blue-700">Información General:</strong> Aunque no es un estadio de la Premier League, el Principality Stadium (antes Millennium Stadium) es uno de los recintos deportivos más importantes del Reino Unido. Es el estadio nacional del equipo de rugby de Gales, pero ha albergado grandes eventos de fútbol, incluyendo la final de la Liga de Campeones de la UEFA en 2017 y finales de la FA Cup mientras se reconstruía Wembley.</p>
+            <p class="mb-6 text-gray-700"><strong class="font-semibold text-blue-700">Arquitectura e Ingeniería:</strong> La característica más destacada del estadio es su techo retráctil. Es uno de los pocos estadios en el mundo con esta característica, lo que le permite albergar eventos en cualquier condición climática. El techo está soportado por cuatro mástiles de 90 metros de altura que le dan su silueta distintiva. Su ubicación céntrica en Cardiff, al lado del río Taff, fue un reto de ingeniería, superado con una estructura de cimentación profunda. El diseño permite una visibilidad excelente para los espectadores.</p>
+            <div class="flex items-center gap-4 text-gray-500 mb-4">
+                <span id="views-principality-stadium" class="flex items-center gap-1"></span>
+                <button id="like-principality-stadium" class="flex items-center gap-1 text-red-600 hover:text-red-800 transition-colors">
+      

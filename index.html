@@ -52,11 +52,26 @@
 </head>
 <body class="bg-gray-100 text-gray-800">
 
+<!-- Nuevo logo circular con las letras "RFC" -->
+<header class="p-4 md:p-8">
+    <div class="container mx-auto max-w-5xl flex items-center">
+        <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-4 shadow-md">
+            <span class="text-white font-extrabold text-xl">RFC</span>
+        </div>
+        <span class="text-2xl font-extrabold text-blue-900 tracking-tight hidden md:block">Estadios Blog</span>
+    </div>
+</header>
+
 <div class="container mx-auto p-4 md:p-8 max-w-5xl">
     <div class="bg-white rounded-xl shadow-lg p-6 md:p-10 mb-8">
         <h1 class="text-3xl md:text-5xl font-extrabold text-center text-blue-900 mb-2 tracking-tight">Los estadios del mundo por uruguayos</h1>
         <p class="text-center text-gray-600 mb-8 italic text-lg">
             Redactado por Rodrigo Fernández, Lucas Labrador y Felipe Figueroa
+        </p>
+
+        <!-- Introducción con un nuevo marco azul -->
+        <p class="text-center text-white bg-blue-800 p-4 rounded-xl mb-8 max-w-2xl mx-auto">
+            Explora las maravillas arquitectónicas del fútbol. A continuación, te presentamos una selección de estadios icónicos que hemos visitado y analizado, desglosando su historia, su ingeniería y su impacto en el deporte.
         </p>
 
         <!-- Contenedor del menú desplegable -->
@@ -87,6 +102,14 @@
 </div>
 
 <div id="alert-message" class="fixed bottom-4 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-sm px-4 py-2 rounded-full shadow-lg opacity-0 transition-opacity duration-300"></div>
+
+<!-- Pie de página agregado -->
+<footer class="bg-blue-900 text-white p-4 text-center mt-8 rounded-t-xl">
+    <div class="container mx-auto max-w-5xl text-sm">
+        <p class="mb-1">© 2024 RFC. Todos los derechos reservados.</p>
+        <p>Un proyecto de Rodrigo Fernández, Lucas Labrador y Felipe Figueroa.</p>
+    </div>
+</footer>
 
 <script>
     // Show a floating message
@@ -171,12 +194,16 @@
 
     // Función para renderizar el HTML del estadio seleccionado
     function renderStadium(stadiumId) {
+        console.log('Intentando renderizar el estadio con ID:', stadiumId);
         const data = stadiumsData[stadiumId];
         const interactionData = interactions[stadiumId];
 
-        if (!data) return '';
+        if (!data) {
+            console.error('Error: No se encontraron datos para el estadio con ID:', stadiumId);
+            return '';
+        }
 
-        return `
+        const html = `
             <article class="stadium-report pt-8 border-gray-200 animate-fadeIn transition-opacity duration-500 ease-in-out">
                 <div class="diario-card">
                     <figure>
@@ -222,6 +249,8 @@
                 </div>
             </article>
         `;
+        console.log('HTML generado para el estadio:', html);
+        return html;
     }
 
     // Lógica para el menú desplegable y la carga de contenido
@@ -244,15 +273,24 @@
                 const stadiumId = target.getAttribute('data-stadium-id');
                 const stadiumName = target.textContent;
                 
+                console.log('Se ha hecho clic en el estadio:', stadiumName, 'con ID:', stadiumId);
+                
                 // Actualizar el botón del dropdown
                 dropdownButton.querySelector('span').textContent = stadiumName;
                 dropdownContainer.classList.remove('active');
 
                 // Renderizar el contenido del estadio
-                stadiumInfoContainer.innerHTML = renderStadium(stadiumId);
-
-                // Agregar los event listeners para las interacciones después de renderizar
-                setupInteractions(stadiumId);
+                try {
+                    if (stadiumInfoContainer) {
+                        stadiumInfoContainer.innerHTML = renderStadium(stadiumId);
+                        // Agregar los event listeners para las interacciones después de renderizar
+                        setupInteractions(stadiumId);
+                    } else {
+                        console.error('Error: No se encontró el contenedor del estadio con ID "stadium-info-container".');
+                    }
+                } catch (error) {
+                    console.error('Error al renderizar el estadio:', error);
+                }
             }
         });
 
@@ -267,46 +305,4 @@
     
     // Función para configurar los listeners de interacciones
     function setupInteractions(stadiumId) {
-        const likeButton = document.getElementById(`like-${stadiumId}`);
-        const likesCountSpan = document.getElementById(`likes-count-${stadiumId}`);
-        const shareButton = document.getElementById(`share-${stadiumId}`);
-        const commentForm = document.getElementById(`comment-form-${stadiumId}`);
-        const commentsDiv = document.getElementById(`comments-${stadiumId}`);
-
-        // Aumentar las vistas al cargar el estadio
-        interactions[stadiumId].views++;
-        document.getElementById(`views-count-${stadiumId}`).textContent = interactions[stadiumId].views;
-
-        if (likeButton) {
-            likeButton.addEventListener('click', () => {
-                interactions[stadiumId].likes++;
-                likesCountSpan.textContent = interactions[stadiumId].likes;
-            });
-        }
-
-        if (shareButton) {
-            shareButton.addEventListener('click', () => {
-                const url = window.location.href;
-                const tempInput = document.createElement('input');
-                document.body.appendChild(tempInput);
-                tempInput.value = url;
-                tempInput.select();
-                document.execCommand('copy');
-                document.body.removeChild(tempInput);
-                showMessage('Enlace copiado al portapapeles!');
-            });
-        }
-
-        if (commentForm) {
-            commentForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const commentInput = e.target.querySelector('input');
-                const commentText = commentInput.value.trim();
-
-                if (commentText) {
-                    const newComment = document.createElement('p');
-                    newComment.className = 'bg-white p-3 rounded-md text-sm shadow-sm';
-                    newComment.textContent = commentText;
-                    commentsDiv.appendChild(newComment);
-                    commentInput.value = '';
-                    interactions[stadiumId].comments.push(commen
+        const likeButton = docume

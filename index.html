@@ -11,33 +11,6 @@
         body {
             font-family: 'Inter', sans-serif;
         }
-        /* Estilos personalizados para el dropdown */
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9fafb;
-            min-width: 250px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 10;
-            top: 100%;
-            left: 0;
-            border-radius: 0 0 0.5rem 0.5rem;
-            max-height: 200px;
-            overflow-y: auto;
-        }
-        .dropdown-content a {
-            color: #1f2937;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            font-weight: 500;
-        }
-        .dropdown-content a:hover {
-            background-color: #e5e7eb;
-        }
-        .dropdown:hover .dropdown-content, .dropdown.active .dropdown-content {
-            display: block;
-        }
         .diario-card {
             display: grid;
             grid-template-columns: 1fr;
@@ -73,35 +46,117 @@
         <p class="text-center text-white bg-blue-800 p-4 rounded-xl mb-8 max-w-2xl mx-auto">
             Explora las maravillas arquitectónicas del fútbol. A continuación, te presentamos una selección de estadios icónicos que hemos visitado y analizado, desglosando su historia, su ingeniería y su impacto en el deporte.
         </p>
-
-        <!-- Contenedor del menú desplegable -->
-        <div class="flex justify-center mb-10">
-            <div id="stadium-dropdown" class="relative dropdown">
-                <button id="dropdown-button" class="bg-blue-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 flex items-center gap-2 w-full justify-between">
-                    <span>Selecciona un estadio</span>
-                    <svg id="dropdown-arrow" class="w-5 h-5 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                    </svg>
-                </button>
-                <div id="dropdown-content" class="dropdown-content">
-                    <a href="#" data-stadium-id="stamford-bridge">Stamford Bridge</a>
-                    <a href="#" data-stadium-id="emirates-stadium">Emirates Stadium</a>
-                    <a href="#" data-stadium-id="tottenham-hotspur-stadium">Tottenham Hotspur Stadium</a>
-                    <a href="#" data-stadium-id="wembley">Wembley Stadium</a>
-                    <a href="#" data-stadium-id="principality-stadium">Principality Stadium</a>
+        
+        <!-- Índice del blog -->
+        <div class="bg-gray-100 p-6 rounded-xl shadow-inner mb-10">
+            <h2 class="text-2xl font-bold text-blue-800 mb-4">Índice de estadios</h2>
+            <ul class="space-y-2 text-blue-600 font-semibold">
+                <li><a href="#stamford-bridge" class="hover:underline transition-colors duration-200">Stamford Bridge</a></li>
+                <li><a href="#emirates-stadium" class="hover:underline transition-colors duration-200">Emirates Stadium</a></li>
+                <li><a href="#tottenham-hotspur-stadium" class="hover:underline transition-colors duration-200">Tottenham Hotspur Stadium</a></li>
+                <li><a href="#wembley" class="hover:underline transition-colors duration-200">Wembley Stadium</a></li>
+                <li><a href="#principality-stadium" class="hover:underline transition-colors duration-200">Principality Stadium</a></li>
+            </ul>
+        </div>
+        
+        <!-- Contenido de los estadios -->
+        <section id="stamford-bridge" class="stadium-report pt-8 border-t border-gray-200 mt-8">
+            <h2 class="text-3xl font-bold text-blue-800 mb-4">Stamford Bridge</h2>
+            <div class="diario-card">
+                <figure>
+                    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/5a/84/b9/view-of-the-bridge-from.jpg?w=900&h=500&s=1" alt="Stamford Bridge" class="w-full h-64 object-cover rounded-lg shadow-md">
+                    <figcaption class="text-xs text-gray-500 mt-2 text-center">Vista interior del Stamford Bridge.</figcaption>
+                </figure>
+                <div>
+                    <ul class="space-y-1 text-gray-700 mb-4">
+                        <li><strong class="font-bold text-blue-600">Club:</strong> Chelsea FC</li>
+                        <li><strong class="font-bold text-blue-600">Ubicación:</strong> Fulham, Londres, Inglaterra</li>
+                        <li><strong class="font-bold text-blue-600">Capacidad:</strong> 40,341 espectadores</li>
+                    </ul>
+                    <p class="text-gray-700 mb-4"><strong class="font-bold text-blue-700">Información General:</strong> Inaugurado en 1877, Stamford Bridge ha sido el hogar del Chelsea FC desde la fundación del club en 1905. Es uno de los estadios más antiguos de la Premier League y ha sido objeto de numerosas renovaciones, aunque su diseño actual mantiene la esencia de su rica historia. A pesar de su antigüedad, el estadio ofrece una experiencia moderna para los aficionados.</p>
+                    <p class="text-gray-700"><strong class="font-bold text-blue-700">Arquitectura e Ingeniería:</strong> La estructura del estadio es el resultado de múltiples fases de desarrollo, lo que le da una forma de tazón no uniforme. La ingeniería moderna se ha centrado en maximizar la capacidad y la visibilidad dentro de los límites del sitio, que es relativamente estrecho. La renovación más notable incluye la remodelación de las tribunas Este, Oeste y Matthew Harding, que han introducido elementos de diseño contemporáneo manteniendo el carácter del estadio. La solución a la escasez de espacio fue la construcción de varias tribunas en voladizo.</p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Contenedor para la información del estadio seleccionado -->
-        <div id="stadium-info-container" class="space-y-12 transition-all duration-500 ease-in-out">
-            <!-- La información del estadio se insertará aquí dinámicamente -->
-        </div>
+        <section id="emirates-stadium" class="stadium-report pt-8 border-t border-gray-200 mt-8">
+            <h2 class="text-3xl font-bold text-blue-800 mb-4">Emirates Stadium</h2>
+            <div class="diario-card">
+                <figure>
+                    <img src="https://www.arsenal.com/sites/default/files/styles/link_image_extra_large/public/images/GettyImages-884411976.jpg?auto=webp&itok=w7-4LWKS" alt="Emirates Stadium" class="w-full h-64 object-cover rounded-lg shadow-md">
+                    <figcaption class="text-xs text-gray-500 mt-2 text-center">Vista interior del Emirates Stadium.</figcaption>
+                </figure>
+                <div>
+                    <ul class="space-y-1 text-gray-700 mb-4">
+                        <li><strong class="font-bold text-blue-600">Club:</strong> Arsenal FC</li>
+                        <li><strong class="font-bold text-blue-600">Ubicación:</strong> Holloway, Londres, Inglaterra</li>
+                        <li><strong class="font-bold text-blue-600">Capacidad:</strong> 60,704 espectadores</li>
+                    </ul>
+                    <p class="text-gray-700 mb-4"><strong class="font-bold text-blue-700">Información General:</strong> Inaugurado en 2006, el Emirates Stadium es el hogar moderno del Arsenal. Reemplazó al icónico Highbury y se construyó para ofrecer una experiencia de día de partido de vanguardia, con una capacidad mucho mayor. El estadio se ha convertido en un símbolo de la era moderna del club y del fútbol de la Premier League.</p>
+                    <p class="text-gray-700"><strong class="font-bold text-blue-700">Arquitectura e Ingeniería:</strong> La arquitectura del Emirates es un diseño de "cuenco" moderno que prioriza la visibilidad desde cualquier asiento. La estructura fue un proyecto de ingeniería masivo que requirió la construcción sobre una línea ferroviaria. El techo es un elemento clave del diseño, que no solo protege a los espectadores, sino que también sirve para amplificar el sonido, mejorando la atmósfera del estadio. El diseño se integra con el entorno urbano a través de grandes áreas abiertas y estatuas de leyendas del club.</p>
+                </div>
+            </div>
+        </section>
 
+        <section id="tottenham-hotspur-stadium" class="stadium-report pt-8 border-t border-gray-200 mt-8">
+            <h2 class="text-3xl font-bold text-blue-800 mb-4">Tottenham Hotspur Stadium</h2>
+            <div class="diario-card">
+                <figure>
+                    <img src="https://www.burohappold.com/wp-content/uploads/2019/10/THFC_11_BHE.jpg" alt="Tottenham Hotspur Stadium" class="w-full h-64 object-cover rounded-lg shadow-md">
+                    <figcaption class="text-xs text-gray-500 mt-2 text-center">Vista interior del Tottenham Hotspur Stadium.</figcaption>
+                </figure>
+                <div>
+                    <ul class="space-y-1 text-gray-700 mb-4">
+                        <li><strong class="font-bold text-blue-600">Club:</strong> Tottenham Hotspur FC</li>
+                        <li><strong class="font-bold text-blue-600">Ubicación:</strong> Tottenham, Londres, Inglaterra</li>
+                        <li><strong class="font-bold text-blue-600">Capacidad:</strong> 62,850 espectadores</li>
+                    </ul>
+                    <p class="text-gray-700 mb-4"><strong class="font-bold text-blue-700">Información General:</strong> Inaugurado en 2019, es uno de los estadios más modernos y tecnológicamente avanzados del mundo. Construido en el mismo sitio que el antiguo White Hart Lane, no solo sirve como estadio de fútbol, sino que también es un lugar multifuncional para eventos de la NFL y conciertos, gracias a su innovador diseño.</p>
+                    <p class="text-gray-700"><strong class="font-bold text-blue-700">Arquitectura e Ingeniería:</strong> La ingeniería del estadio es excepcional. Presenta un campo de fútbol retráctil, revelando una superficie de césped artificial debajo para los partidos de la NFL. Esta solución técnica es una de las más complejas jamás implementadas en un estadio. El diseño del "cuenco" de la grada sur, con 17,500 asientos, crea un "Muro de Sonido" para una acústica inigualable. El estadio fue diseñado para ser energéticamente eficiente y utilizar tecnologías de construcción sostenibles.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="wembley" class="stadium-report pt-8 border-t border-gray-200 mt-8">
+            <h2 class="text-3xl font-bold text-blue-800 mb-4">Wembley Stadium</h2>
+            <div class="diario-card">
+                <figure>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Wembley_Stadium_interior.jpg/1280px-Wembley_Stadium_interior.jpg" alt="Wembley Stadium" class="w-full h-64 object-cover rounded-lg shadow-md">
+                    <figcaption class="text-xs text-gray-500 mt-2 text-center">Vista interior del Wembley Stadium.</figcaption>
+                </figure>
+                <div>
+                    <ul class="space-y-1 text-gray-700 mb-4">
+                        <li><strong class="font-bold text-blue-600">Club:</strong> Estadio Nacional de Inglaterra</li>
+                        <li><strong class="font-bold text-blue-600">Ubicación:</strong> Wembley, Londres, Inglaterra</li>
+                        <li><strong class="font-bold text-blue-600">Capacidad:</strong> 90,000 espectadores</li>
+                    </ul>
+                    <p class="text-gray-700 mb-4"><strong class="font-bold text-blue-700">Información General:</strong> El nuevo Wembley se inauguró en 2007 en el mismo sitio que el antiguo estadio. Es el estadio más grande del Reino Unido y el segundo más grande de Europa. Es el estadio nacional de la selección de fútbol de Inglaterra y la sede de las finales de la FA Cup y la Copa de la Liga, así como de numerosos conciertos y eventos deportivos.</p>
+                    <p class="text-gray-700"><strong class="font-bold text-blue-700">Arquitectura e Ingeniería:</strong> El icónico arco de Wembley, que se eleva a 133 metros de altura, es su característica más reconocible. Más que un adorno estético, el arco es un elemento estructural clave que soporta el peso del techo, eliminando la necesidad de pilares internos y ofreciendo vistas sin obstrucciones. El techo retráctil parcial permite la entrada de luz solar al campo. La ingeniería acústica también fue una prioridad, con un diseño que maximiza el ruido del público para una atmósfera eléctrica.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="principality-stadium" class="stadium-report pt-8 border-t border-gray-200 mt-8">
+            <h2 class="text-3xl font-bold text-blue-800 mb-4">Principality Stadium</h2>
+            <div class="diario-card">
+                <figure>
+                    <img src="https://visitwalesimages.thedms.co.uk/eandapics/MW/vlarge/1010944_121_3.jpg" alt="Principality Stadium" class="w-full h-64 object-cover rounded-lg shadow-md">
+                    <figcaption class="text-xs text-gray-500 mt-2 text-center">Vista interior del Principality Stadium.</figcaption>
+                </figure>
+                <div>
+                    <ul class="space-y-1 text-gray-700 mb-4">
+                        <li><strong class="font-bold text-blue-600">Club:</strong> Estadio Nacional de Gales</li>
+                        <li><strong class="font-bold text-blue-600">Ubicación:</strong> Cardiff, Gales</li>
+                        <li><strong class="font-bold text-blue-600">Capacidad:</strong> 73,931 espectadores</li>
+                    </ul>
+                    <p class="text-gray-700 mb-4"><strong class="font-bold text-blue-700">Información General:</strong> Aunque no es un estadio de la Premier League, el Principality Stadium (antes Millennium Stadium) es uno de los recintos deportivos más importantes del Reino Unido. Es el estadio nacional del equipo de rugby de Gales, pero ha albergado grandes eventos de fútbol, incluyendo la final de la Liga de Campeones de la UEFA en 2017 y finales de la FA Cup mientras se reconstruía Wembley.</p>
+                    <p class="text-gray-700"><strong class="font-bold text-blue-700">Arquitectura e Ingeniería:</strong> La característica más destacada del estadio es su techo retráctil. Es uno de los pocos estadios en el mundo con esta característica, lo que le permite albergar eventos en cualquier condición climática. El techo está soportado por cuatro mástiles de 90 metros de altura que le dan su silueta distintiva. Su ubicación céntrica en Cardiff, al lado del río Taff, fue un reto de ingeniería, superado con una estructura de cimentación profunda. El diseño permite una visibilidad excelente para los espectadores.</p>
+                </div>
+            </div>
+        </section>
+        
     </div>
 </div>
-
-<div id="alert-message" class="fixed bottom-4 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-sm px-4 py-2 rounded-full shadow-lg opacity-0 transition-opacity duration-300"></div>
 
 <!-- Pie de página agregado -->
 <footer class="bg-blue-900 text-white p-4 text-center mt-8 rounded-t-xl">
@@ -111,187 +166,6 @@
     </div>
 </footer>
 
-<script>
-    // Muestra un mensaje flotante en la pantalla
-    function showMessage(text) {
-        const alertBox = document.getElementById('alert-message');
-        if (alertBox) {
-            alertBox.textContent = text;
-            alertBox.classList.add('opacity-100');
-            setTimeout(() => {
-                alertBox.classList.remove('opacity-100');
-            }, 3000);
-        }
-    }
+</body>
+</html>
 
-    const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-
-    // Datos de los estadios
-    const stadiumsData = {
-        'stamford-bridge': {
-            name: 'Stamford Bridge',
-            club: 'Chelsea FC',
-            location: 'Fulham, Londres, Inglaterra',
-            capacity: '40,341 espectadores',
-            imageURL: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/5a/84/b9/view-of-the-bridge-from.jpg?w=900&h=500&s=1',
-            info: {
-                general: 'Inaugurado en 1877, Stamford Bridge ha sido el hogar del Chelsea FC desde la fundación del club en 1905. Es uno de los estadios más antiguos de la Premier League y ha sido objeto de numerosas renovaciones, aunque su diseño actual mantiene la esencia de su rica historia. A pesar de su antigüedad, el estadio ofrece una experiencia moderna para los aficionados.',
-                architecture: 'La estructura del estadio es el resultado de múltiples fases de desarrollo, lo que le da una forma de tazón no uniforme. La ingeniería moderna se ha centrado en maximizar la capacidad y la visibilidad dentro de los límites del sitio, que es relativamente estrecho. La renovación más notable incluye la remodelación de las tribunas Este, Oeste y Matthew Harding, que han introducido elementos de diseño contemporáneo manteniendo el carácter del estadio. La solución a la escasez de espacio fue la construcción de varias tribunas en voladizo.'
-            }
-        },
-        'emirates-stadium': {
-            name: 'Emirates Stadium',
-            club: 'Arsenal FC',
-            location: 'Holloway, Londres, Inglaterra',
-            capacity: '60,704 espectadores',
-            imageURL: 'https://www.arsenal.com/sites/default/files/styles/link_image_extra_large/public/images/GettyImages-884411976.jpg?auto=webp&itok=w7-4LWKS',
-            info: {
-                general: 'Inaugurado en 2006, el Emirates Stadium es el hogar moderno del Arsenal. Reemplazó al icónico Highbury y se construyó para ofrecer una experiencia de día de partido de vanguardia, con una capacidad mucho mayor. El estadio se ha convertido en un símbolo de la era moderna del club y del fútbol de la Premier League.',
-                architecture: 'La arquitectura del Emirates es un diseño de "cuenco" moderno que prioriza la visibilidad desde cualquier asiento. La estructura fue un proyecto de ingeniería masivo que requirió la construcción sobre una línea ferroviaria. El techo es un elemento clave del diseño, que no solo protege a los espectadores, sino que también sirve para amplificar el sonido, mejorando la atmósfera del estadio. El diseño se integra con el entorno urbano a través de grandes áreas abiertas y estatuas de leyendas del club.'
-            }
-        },
-        'tottenham-hotspur-stadium': {
-            name: 'Tottenham Hotspur Stadium',
-            club: 'Tottenham Hotspur FC',
-            location: 'Tottenham, Londres, Inglaterra',
-            capacity: '62,850 espectadores',
-            imageURL: 'https://www.burohappold.com/wp-content/uploads/2019/10/THFC_11_BHE.jpg',
-            info: {
-                general: 'Inaugurado en 2019, es uno de los estadios más modernos y tecnológicamente avanzados del mundo. Construido en el mismo sitio que el antiguo White Hart Lane, no solo sirve como estadio de fútbol, sino que también es un lugar multifuncional para eventos de la NFL y conciertos, gracias a su innovador diseño.',
-                architecture: 'La ingeniería del estadio es excepcional. Presenta un campo de fútbol retráctil, revelando una superficie de césped artificial debajo para los partidos de la NFL. Esta solución técnica es una de las más complejas jamás implementadas en un estadio. El diseño del "cuenco" de la grada sur, con 17,500 asientos, crea un "Muro de Sonido" para una acústica inigualable. El estadio fue diseñado para ser energéticamente eficiente y utilizar tecnologías de construcción sostenibles.'
-            }
-        },
-        'wembley': {
-            name: 'Wembley Stadium',
-            club: 'Estadio Nacional de Inglaterra',
-            location: 'Wembley, Londres, Inglaterra',
-            capacity: '90,000 espectadores',
-            imageURL: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Wembley_Stadium_interior.jpg/1280px-Wembley_Stadium_interior.jpg',
-            info: {
-                general: 'El nuevo Wembley se inauguró en 2007 en el mismo sitio que el antiguo estadio. Es el estadio más grande del Reino Unido y el segundo más grande de Europa. Es el estadio nacional de la selección de fútbol de Inglaterra y la sede de las finales de la FA Cup y la Copa de la Liga, así como de numerosos conciertos y eventos deportivos.',
-                architecture: 'El icónico arco de Wembley, que se eleva a 133 metros de altura, es su característica más reconocible. Más que un adorno estético, el arco es un elemento estructural clave que soporta el peso del techo, eliminando la necesidad de pilares internos y ofreciendo vistas sin obstrucciones. El techo retráctil parcial permite la entrada de luz solar al campo. La ingeniería acústica también fue una prioridad, con un diseño que maximiza el ruido del público para una atmósfera eléctrica.'
-            }
-        },
-        'principality-stadium': {
-            name: 'Principality Stadium',
-            club: 'Estadio Nacional de Gales',
-            location: 'Cardiff, Gales',
-            capacity: '73,931 espectadores',
-            imageURL: 'https://visitwalesimages.thedms.co.uk/eandapics/MW/vlarge/1010944_121_3.jpg',
-            info: {
-                general: 'Aunque no es un estadio de la Premier League, el Principality Stadium (antes Millennium Stadium) es uno de los recintos deportivos más importantes del Reino Unido. Es el estadio nacional del equipo de rugby de Gales, pero ha albergado grandes eventos de fútbol, incluyendo la final de la Liga de Campeones de la UEFA en 2017 y finales de la FA Cup mientras se reconstruía Wembley.',
-                architecture: 'La característica más destacada del estadio es su techo retráctil. Es uno de los pocos estadios en el mundo con esta característica, lo que le permite albergar eventos en cualquier condición climática. El techo está soportado por cuatro mástiles de 90 metros de altura que le dan su silueta distintiva. Su ubicación céntrica en Cardiff, al lado del río Taff, fue un reto de ingeniería, superado con una estructura de cimentación profunda. El diseño permite una visibilidad excelente para los espectadores.'
-            }
-        }
-    };
-
-    // Objeto para almacenar las interacciones (simulado, no persistente)
-    let interactions = {
-        'stamford-bridge': { views: getRandomInt(7500, 15000), likes: getRandomInt(110, 650), comments: [] },
-        'emirates-stadium': { views: getRandomInt(7500, 15000), likes: getRandomInt(110, 650), comments: [] },
-        'tottenham-hotspur-stadium': { views: getRandomInt(7500, 15000), likes: getRandomInt(110, 650), comments: [] },
-        'wembley': { views: getRandomInt(7500, 15000), likes: getRandomInt(110, 650), comments: [] },
-        'principality-stadium': { views: getRandomInt(7500, 15000), likes: getRandomInt(110, 650), comments: [] },
-    };
-
-    // Función para renderizar el HTML del estadio seleccionado
-    function renderStadium(stadiumId) {
-        console.log('Intentando renderizar el estadio con ID:', stadiumId);
-        const data = stadiumsData[stadiumId];
-        const interactionData = interactions[stadiumId];
-
-        if (!data) {
-            console.error('Error: No se encontraron datos para el estadio con ID:', stadiumId);
-            return '';
-        }
-
-        const html = `
-            <article class="stadium-report pt-8 border-gray-200 animate-fadeIn transition-opacity duration-500 ease-in-out">
-                <div class="diario-card">
-                    <figure>
-                        <img src="${data.imageURL}" alt="${data.name}" class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
-                        <figcaption class="text-xs text-gray-500 mt-2 text-center">Vista interior del ${data.name}.</figcaption>
-                    </figure>
-                    <div>
-                        <h2 class="text-2xl md:text-3xl font-bold text-blue-800 mb-4">${data.name}</h2>
-                        <ul class="space-y-1 text-gray-700 mb-4">
-                            <li><strong class="font-bold text-blue-600">Club:</strong> ${data.club}</li>
-                            <li><strong class="font-bold text-blue-600">Ubicación:</strong> ${data.location}</li>
-                            <li><strong class="font-bold text-blue-600">Capacidad:</strong> ${data.capacity}</li>
-                        </ul>
-                        <p class="text-gray-700 mb-4"><strong class="font-bold text-blue-700">Información General:</strong> ${data.info.general}</p>
-                        <p class="text-gray-700"><strong class="font-bold text-blue-700">Arquitectura e Ingeniería:</strong> ${data.info.architecture}</p>
-                    </div>
-                </div>
-                <!-- Interacciones -->
-                <div class="flex items-center gap-4 text-gray-500 mt-6 mb-4">
-                    <span id="views-${stadiumId}" class="flex items-center gap-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4.5c4.73 0 8.91 3.51 10.74 8.5C20.91 17.99 16.73 21.5 12 21.5S3.09 17.99 1.26 13C3.09 8.01 7.27 4.5 12 4.5zm0 14c-2.48 0-4.5-2.02-4.5-4.5S9.52 9.5 12 9.5s4.5 2.02 4.5 4.5-2.02 4.5-4.5 4.5zm0-7c-1.38 0-2.5 1.12-2.5 2.5s1.12 2.5 2.5 2.5 2.5-1.12 2.5-2.5-1.12-2.5-2.5-2.5z"/></svg>
-                        <span id="views-count-${stadiumId}">${interactionData.views}</span>
-                    </span>
-                    <button id="like-${stadiumId}" class="flex items-center gap-1 text-red-600 hover:text-red-800 transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                        <span id="likes-count-${stadiumId}">${interactionData.likes}</span>
-                    </button>
-                    <button id="share-${stadiumId}" class="flex items-center gap-1 text-blue-600 hover:text-blue-800 transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08a2.52 2.52 0 0 0-1.76.7L9.91 12.5a2.58 2.58 0 0 0 0-1L16.24 7.2a2.52 2.52 0 1 0-.6-1.57A2.52 2.52 0 0 0 14.24 6l-6.33 3.65a2.55 2.55 0 1 0 0 4.7L14.24 18a2.52 2.52 0 1 0 3.76.08z"/></svg>
-                        <span>Compartir</span>
-                    </button>
-                </div>
-                <!-- Sección de comentarios -->
-                <div class="comments-section bg-gray-50 p-4 rounded-lg">
-                    <h4 class="font-semibold text-gray-800 mb-2">Comentarios</h4>
-                    <div id="comments-${stadiumId}" class="space-y-3 mb-4">
-                        ${interactionData.comments.map(c => `<p class="bg-white p-3 rounded-md text-sm">${c}</p>`).join('')}
-                    </div>
-                    <form id="comment-form-${stadiumId}" class="flex flex-col md:flex-row gap-2">
-                        <input type="text" placeholder="Escribe un comentario..." class="flex-1 p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
-                        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-blue-700 transition-colors text-sm">Enviar</button>
-                    </form>
-                </div>
-            </article>
-        `;
-        return html;
-    }
-
-    // Lógica para el menú desplegable y la carga de contenido
-    document.addEventListener('DOMContentLoaded', () => {
-        const dropdownButton = document.getElementById('dropdown-button');
-        const dropdownContent = document.getElementById('dropdown-content');
-        const dropdownContainer = document.getElementById('stadium-dropdown');
-        const stadiumInfoContainer = document.getElementById('stadium-info-container');
-        
-        if (!dropdownButton || !dropdownContent || !dropdownContainer || !stadiumInfoContainer) {
-            console.error('Error: Uno o más elementos HTML necesarios no se encontraron. Asegúrate de que los IDs sean correctos.');
-            return; // Detiene la ejecución si los elementos no existen
-        }
-
-        // Manejar el toggle del dropdown al hacer clic en el botón
-        dropdownButton.addEventListener('click', (e) => {
-            e.stopPropagation(); // Evita que el evento se propague al 'window'
-            dropdownContainer.classList.toggle('active');
-            console.log('Botón del dropdown clicado. Estado activo:', dropdownContainer.classList.contains('active'));
-        });
-
-        // Manejar la selección de un estadio
-        dropdownContent.addEventListener('click', (e) => {
-            e.preventDefault();
-            // CORRECCIÓN: Usamos `closest('a')` para encontrar el enlace,
-            // incluso si el clic fue en un elemento hijo del enlace (como texto o padding).
-            const target = e.target.closest('a');
-            if (target) {
-                const stadiumId = target.getAttribute('data-stadium-id');
-                const stadiumName = target.textContent;
-                
-                console.log('Opción de menú clicada:', stadiumName, 'con ID:', stadiumId);
-                
-                // Actualizar el botón del dropdown
-                dropdownButton.querySelector('span').textContent = stadiumName;
-                dropdownContainer.classList.remove('active');
-
-                // Renderizar el contenido del estadio
-                try {
-                    stadiumInfoContainer.innerHTML = renderStadium(stadiumId);
-                    // Agregar los event listeners para las interacciones después de renderizar
-                    setupInteractions(stadiumId);
-                    console.log('Contenido del estadio renderizado correctamente.'

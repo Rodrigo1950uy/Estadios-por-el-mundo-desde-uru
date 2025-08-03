@@ -276,8 +276,10 @@
         // Manejar la selección de un estadio
         dropdownContent.addEventListener('click', (e) => {
             e.preventDefault();
-            const target = e.target;
-            if (target.tagName === 'A') {
+            // CORRECCIÓN: Usamos `closest('a')` para encontrar el enlace,
+            // incluso si el clic fue en un elemento hijo del enlace (como texto o padding).
+            const target = e.target.closest('a');
+            if (target) {
                 const stadiumId = target.getAttribute('data-stadium-id');
                 const stadiumName = target.textContent;
                 
@@ -292,9 +294,4 @@
                     stadiumInfoContainer.innerHTML = renderStadium(stadiumId);
                     // Agregar los event listeners para las interacciones después de renderizar
                     setupInteractions(stadiumId);
-                    console.log('Contenido del estadio renderizado correctamente.');
-                } catch (error) {
-                    console.error('Error al renderizar el contenido del estadio:', error);
-                }
-            }
-     
+                    console.log('Contenido del estadio renderizado correctamente.'

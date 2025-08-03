@@ -52,7 +52,7 @@
 </head>
 <body class="bg-gray-100 text-gray-800">
 
-<!-- Nuevo logo circular con las letras "RFC" -->
+<!-- Logo circular con las letras "RFC" -->
 <header class="p-4 md:p-8">
     <div class="container mx-auto max-w-5xl flex items-center">
         <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-4 shadow-md">
@@ -112,14 +112,16 @@
 </footer>
 
 <script>
-    // Show a floating message
+    // Muestra un mensaje flotante en la pantalla
     function showMessage(text) {
         const alertBox = document.getElementById('alert-message');
-        alertBox.textContent = text;
-        alertBox.classList.add('opacity-100');
-        setTimeout(() => {
-            alertBox.classList.remove('opacity-100');
-        }, 3000);
+        if (alertBox) {
+            alertBox.textContent = text;
+            alertBox.classList.add('opacity-100');
+            setTimeout(() => {
+                alertBox.classList.remove('opacity-100');
+            }, 3000);
+        }
     }
 
     const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
@@ -183,7 +185,7 @@
         }
     };
 
-    // Objeto para almacenar las interacciones
+    // Objeto para almacenar las interacciones (simulado, no persistente)
     let interactions = {
         'stamford-bridge': { views: getRandomInt(7500, 15000), likes: getRandomInt(110, 650), comments: [] },
         'emirates-stadium': { views: getRandomInt(7500, 15000), likes: getRandomInt(110, 650), comments: [] },
@@ -249,7 +251,6 @@
                 </div>
             </article>
         `;
-        console.log('HTML generado para el estadio:', html);
         return html;
     }
 
@@ -260,9 +261,16 @@
         const dropdownContainer = document.getElementById('stadium-dropdown');
         const stadiumInfoContainer = document.getElementById('stadium-info-container');
         
+        if (!dropdownButton || !dropdownContent || !dropdownContainer || !stadiumInfoContainer) {
+            console.error('Error: Uno o más elementos HTML necesarios no se encontraron. Asegúrate de que los IDs sean correctos.');
+            return; // Detiene la ejecución si los elementos no existen
+        }
+
         // Manejar el toggle del dropdown al hacer clic en el botón
-        dropdownButton.addEventListener('click', () => {
+        dropdownButton.addEventListener('click', (e) => {
+            e.stopPropagation(); // Evita que el evento se propague al 'window'
             dropdownContainer.classList.toggle('active');
+            console.log('Botón del dropdown clicado. Estado activo:', dropdownContainer.classList.contains('active'));
         });
 
         // Manejar la selección de un estadio
@@ -273,7 +281,7 @@
                 const stadiumId = target.getAttribute('data-stadium-id');
                 const stadiumName = target.textContent;
                 
-                console.log('Se ha hecho clic en el estadio:', stadiumName, 'con ID:', stadiumId);
+                console.log('Opción de menú clicada:', stadiumName, 'con ID:', stadiumId);
                 
                 // Actualizar el botón del dropdown
                 dropdownButton.querySelector('span').textContent = stadiumName;
@@ -281,28 +289,12 @@
 
                 // Renderizar el contenido del estadio
                 try {
-                    if (stadiumInfoContainer) {
-                        stadiumInfoContainer.innerHTML = renderStadium(stadiumId);
-                        // Agregar los event listeners para las interacciones después de renderizar
-                        setupInteractions(stadiumId);
-                    } else {
-                        console.error('Error: No se encontró el contenedor del estadio con ID "stadium-info-container".');
-                    }
+                    stadiumInfoContainer.innerHTML = renderStadium(stadiumId);
+                    // Agregar los event listeners para las interacciones después de renderizar
+                    setupInteractions(stadiumId);
+                    console.log('Contenido del estadio renderizado correctamente.');
                 } catch (error) {
-                    console.error('Error al renderizar el estadio:', error);
+                    console.error('Error al renderizar el contenido del estadio:', error);
                 }
             }
-        });
-
-        // Cerrar el menú si se hace clic fuera
-        window.addEventListener('click', (e) => {
-            if (!dropdownContainer.contains(e.target)) {
-                dropdownContainer.classList.remove('active');
-            }
-        });
-
-    });
-    
-    // Función para configurar los listeners de interacciones
-    function setupInteractions(stadiumId) {
-        const likeButton = docume
+     
